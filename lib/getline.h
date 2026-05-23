@@ -11,8 +11,8 @@
 
 #define GETLINE_NO_LIMIT -1
 
-int
-  getline __PROTO ((char **_lineptr, size_t *_n, FILE *_stream));
+ssize_t
+  getline(char ** restrict linep, size_t * restrict linecapp, FILE * restrict stream);
 int
   getline_safe __PROTO ((char **_lineptr, size_t *_n, FILE *_stream,
                          int limit));

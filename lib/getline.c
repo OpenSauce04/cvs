@@ -154,13 +154,10 @@ getstr (lineptr, n, stream, terminator, offset, limit)
   return ret;
 }
 
-int
-getline (lineptr, n, stream)
-     char **lineptr;
-     size_t *n;
-     FILE *stream;
+ssize_t
+     getline(char ** restrict lineptr, size_t * restrict linecapp, FILE *     restrict stream)
 {
-  return getstr (lineptr, n, stream, '\n', 0, GETLINE_NO_LIMIT);
+  return (ssize_t)getstr (lineptr, linecapp, stream, '\n', 0, GETLINE_NO_LIMIT);
 }
 
 int
